@@ -12,8 +12,8 @@ import java.lang.annotation.Target;
  * public void test(int a, int b) {…}
  */
 
-@Target(value= ElementType.METHOD)
-@Retention(value= RetentionPolicy.RUNTIME)
+@Target(value = ElementType.METHOD)
+@Retention(value = RetentionPolicy.RUNTIME)
 public @interface Test {
     int a();
     int b();

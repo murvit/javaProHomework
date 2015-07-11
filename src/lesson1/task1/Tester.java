@@ -21,10 +21,4 @@ public class Tester {
             }
         }
     }
-
-    public static void main(String[] args) {
-        Tester tester = new Tester();
-        tester.test();
-    }
-
 }
