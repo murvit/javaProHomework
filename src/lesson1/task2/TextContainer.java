@@ -8,7 +8,6 @@ import java.io.*;
  * который сохранит объект класса TextContainer.
  */
 
-//@SaveTo(path = "C:\\Vit\\javaProHomework\\res\\Container.txt")
 @SaveTo(path = "src\\res\\Container.txt")
 public class TextContainer {
     static String container = "Here is some text";
