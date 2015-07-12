@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 public class SaverClass {
 
-    void saveContainer (Class<?> clazz){
+    public void saveContainer (Class<?> clazz){
         String path = clazz.getAnnotation(SaveTo.class).path();
         Method[] methods = clazz.getMethods();
         for (Method method : methods){

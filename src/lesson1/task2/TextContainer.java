@@ -10,7 +10,7 @@ import java.io.*;
 
 @SaveTo(path = "src\\res\\Container.txt")
 public class TextContainer {
-    static String container = "Here is some text";
+    private static String container = "Here is some text";
 
     public void print() {
         System.out.println(container);
@@ -32,4 +32,5 @@ public class TextContainer {
             e.printStackTrace();
         }
     }
+
 }

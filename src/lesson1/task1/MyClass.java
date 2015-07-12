@@ -9,10 +9,10 @@ package lesson1.task1;
 
 public class MyClass {
 
-    int x;
-    int y;
+    private int x;
+    private int y;
 
-    int sum(int x, int y) {
+    public int sum(int x, int y) {
         return x + y;
     }
 

@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  */
 
 public class Tester {
-    void test(Class<?> clazz) {
+    public void test(Class<?> clazz) {
         Method[] methods = clazz.getDeclaredMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(Test.class)) {
