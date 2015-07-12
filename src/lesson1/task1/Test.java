@@ -1,9 +1,6 @@
 package lesson1.task1;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * —оздать аннотацию Test, котора€ принимает параметры дл€ процедуры тестировани€ и передает их в
@@ -12,6 +9,7 @@ import java.lang.annotation.Target;
  * public void test(int a, int b) {Е}
  */
 
+@Inherited
 @Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface Test {
