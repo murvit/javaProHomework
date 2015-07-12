@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <book>
+        <author>Author1</author>
+        <genre>Computer</genre>
+        <price>14.55</price>
+        <publish_date>2015-07-12T20:12:31.773+03:00</publish_date>
+        <title>Title1</title>
+    </book>
+    <book>
+        <author>Author2</author>
+        <genre/>
+        <price>66.0</price>
+        <publish_date>2015-07-12T20:12:31.773+03:00</publish_date>
+        <title>Title2</title>
+    </book>
+</catalog>
