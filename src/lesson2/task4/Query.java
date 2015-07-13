@@ -8,14 +8,15 @@ import java.util.List;
 
 @XmlRootElement (name = "query")
 public class Query {
-    @XmlAttribute (name = "yahoo:count")
+
+    @XmlAttribute(namespace = "http://www.yahooapis.com/v1/base.rng")
     public int count;
-    @XmlAttribute (name = "yahoo:created")
+    @XmlAttribute(namespace = "http://www.yahooapis.com/v1/base.rng")
     public String created;
-    @XmlAttribute (name = "yahoo:lang")
+    @XmlAttribute(namespace = "http://www.yahooapis.com/v1/base.rng")
     public String lang;
 
-    @XmlElementWrapper(name = "result")
+    @XmlElementWrapper(name = "results")
     @XmlElement(name = "rate")
     public List<Rate> rate;
 

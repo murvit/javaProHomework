@@ -1,14 +1,10 @@
 package lesson2.task4;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 
 public class Main {
 
@@ -19,15 +15,15 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        String result = performRequest(request);
+        performRequest(request);
         JAXBContext jaxbContext = JAXBContext.newInstance(Query.class);
         Unmarshaller um = jaxbContext.createUnmarshaller();
-        Query query = (Query) um.unmarshal(new StringReader(result));
+        Query query = (Query) um.unmarshal(file);
         System.out.println(query);
 
     }
 
-    private static String performRequest(String urlStr) throws IOException {
+    private static void performRequest(String urlStr) throws IOException {
 
         URL url = new URL(urlStr);
         StringBuilder sb = new StringBuilder();
@@ -50,7 +46,6 @@ public class Main {
         fw.flush();
         fw.close();
         System.out.println("Save file OK");
-        return sb.toString();
 
     }
 
