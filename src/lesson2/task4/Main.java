@@ -3,35 +3,34 @@ package lesson2.task4;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 public class Main {
-    
+
+    static File file = new File("src\\res\\yahoo.xml");
+    static String request = "http://query.yahooapis.com/v1/public/yql?format=xml&q=select%20*%20from%20" +
+            "yahoo.finance.xchange%20where%20pair%20in%20(\"USDEUR\",%20\"USDUAH\")&env=store://datatables.org/alltableswithkeys";
+
+
     public static void main(String[] args) throws Exception {
 
-        String request = "http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20" +
-                "yahoo.finance.xchange%20where%20pair%20in%20(\"USDEUR\",%20\"USDUAH\")&env=store://datatables.org/alltableswithkeys";
-
         String result = performRequest(request);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Query.class);
+        Unmarshaller um = jaxbContext.createUnmarshaller();
+        Query query = (Query) um.unmarshal(new StringReader(result));
+        System.out.println(query);
 
-        Gson gson = new GsonBuilder().create();
-        JSON json = (JSON) gson.fromJson(result, JSON.class);
-
-        for (Rate rate : json.query.results.rate) {
-            System.out.println(rate.id + "=" + rate.Rate);
-        }
-        
-        System.out.println("JSON: \n\t" + gson.toJson(json));
     }
 
     private static String performRequest(String urlStr) throws IOException {
+
         URL url = new URL(urlStr);
         StringBuilder sb = new StringBuilder();
-
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -46,7 +45,13 @@ public class Main {
             http.disconnect();
         }
 
+        FileWriter fw = new FileWriter(file);
+        fw.write(sb.toString());
+        fw.flush();
+        fw.close();
+        System.out.println("Save file OK");
         return sb.toString();
+
     }
 
 }

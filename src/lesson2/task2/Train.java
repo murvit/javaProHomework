@@ -3,10 +3,7 @@ package lesson2.task2;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 /**
  * Есть список поездов, представленный с виде XML. Вывести на экран информацию о тех поездах, которые

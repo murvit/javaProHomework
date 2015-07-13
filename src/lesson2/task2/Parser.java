@@ -60,6 +60,7 @@ public class Parser {
         try {
             jaxbContext = JAXBContext.newInstance(Trains.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(trains, file);
         } catch (JAXBException e) {
             e.printStackTrace();
