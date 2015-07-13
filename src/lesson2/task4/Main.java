@@ -6,6 +6,11 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Написать парсер для Yahoo Finance в режиме XML
+ *       (format=xml).
+ */
+
 public class Main {
 
     static File file = new File("src\\res\\yahoo.xml");

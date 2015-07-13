@@ -4,6 +4,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+* Написать парсер для Yahoo Finance в режиме XML
+*       (format=xml).
+*/
+
 @XmlRootElement (name = "rate")
 public class Rate {
     @XmlAttribute

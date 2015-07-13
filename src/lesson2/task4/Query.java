@@ -6,6 +6,11 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+/**
+ * Написать парсер для Yahoo Finance в режиме XML
+ *       (format=xml).
+ */
+
 @XmlRootElement (name = "query")
 public class Query {
 
